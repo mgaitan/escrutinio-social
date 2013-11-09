@@ -43,7 +43,7 @@ class Mesa(models.Model):
 
     @property
     def computados(self):
-        return self.votomesa_set.aggregate(Sum('votos'))['votos__sum']
+        return self.votomesaoficial_set.aggregate(Sum('votos'))['votos__sum']
 
     def __unicode__(self):
         return u"Mesa %s (%s)" % (self.numero, self.circuito)
